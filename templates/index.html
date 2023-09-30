@@ -49,7 +49,8 @@
               </div>
               <div class="tabs-content">
                 <div class="tab-content tab-content-1 active">
-                  <form method="post" class="tabs-content-form profile-form">
+                  <form method="post" action="{% url 'main:form' %}" class="tabs-content-form profile-form">
+                    {% csrf_token %}
                     <div class="tab-content-inputs">
                       <div class="input-wrapper input-wrapper-top">
                         <div
@@ -60,28 +61,34 @@
                             <label
                               class="tab-content-input-profile-gender-label label-mars"
                               for="gender-1"
-                              ><input
+                              >
+                              {% comment %} <input
                                 id="gender-1"
                                 name="gender"
                                 type="radio"
                                 value="Мужчина"
                                 class="tab-content-input-profile-gender"
                                 tabindex="-1"
-                              />Мужчина</label
+                              /> {% endcomment %}
+                              {{ form.gender_mars }}
+                              Мужчина</label
                             >
                           </div>
                           <div class="tab-content-input-profile-row-gender">
                             <label
                               class="tab-content-input-profile-gender-label label-venus"
                               for="gender-2"
-                              ><input
+                              >
+                              {% comment %} <input
                                 id="gender-2"
                                 name="gender"
                                 type="radio"
                                 value="Женщина"
                                 class="tab-content-input-profile-gender"
                                 tabindex="-1"
-                              />Женщина</label
+                              /> {% endcomment %}
+                              {{ form.gender_venus }}
+                              Женщина</label
                             >
                           </div>
                         </div>
@@ -93,28 +100,36 @@
                             <label
                               class="tab-content-input-profile-city-label"
                               for="city-1"
-                              ><input
+                              >
+                              {% comment %} <input
                                 id="city-1"
                                 name="city"
                                 type="radio"
                                 value="Да"
                                 class="tab-content-input-profile-city"
                                 tabindex="-1"
-                              />Да</label
+                              /> {% endcomment %}
+                              {{ form.city_true }}
+                              Да
+                              </label
                             >
                           </div>
                           <div class="tab-content-input-profile-row-city">
                             <label
                               class="tab-content-input-profile-city-label"
                               for="city-2"
-                              ><input
+                              >
+                              {% comment %} <input
                                 id="city-2"
                                 name="city"
                                 type="radio"
                                 value="Нет"
                                 class="tab-content-input-profile-city"
                                 tabindex="-1"
-                              />Нет</label
+                              /> {% endcomment %}
+                              {{ form.city_false }}
+                              Нет
+                              </label
                             >
                           </div>
                         </div>
@@ -123,128 +138,140 @@
                         <div
                           class="tab-content-input-profile-row tab-content-input-profile-row-surname tab-input"
                         >
-                          <input
+                          {% comment %} <input
                             placeholder="Укажите фамилию"
                             type="text"
                             class="tab-content-input-profile tab-content-input-profile-surname"
                             tabindex="-1"
-                          />
+                          /> {% endcomment %}
+                          {{ form.surname }}
                         </div>
                         <div
                           class="tab-content-input-profile-row tab-content-input-profile-row-name tab-input"
                         >
-                          <input
+                          {% comment %} <input
                             placeholder="Укажите имя"
                             type="text"
                             class="tab-content-input-profile tab-content-input-profile-name"
                             tabindex="-1"
-                          />
+                          /> {% endcomment %}
+                          {{ form.name }}
                         </div>
                         <div
                           class="tab-content-input-profile-row tab-content-input-profile-row-middlename tab-input"
                         >
-                          <input
+                          {% comment %} <input
                             placeholder="Укажите отчество (при наличии)"
                             type="text"
                             class="tab-content-input-profile tab-content-input-profile-middlename"
                             tabindex="-1"
-                          />
+                          /> {% endcomment %}
+                          {{ form.middlename }}
                         </div>
                       </div>
                       <div class="input-wrapper">
                         <div
                           class="tab-content-input-profile-row tab-content-input-profile-row-birthdate tab-input active"
                         >
-                          <input
+                          {% comment %} <input
                             placeholder="Укажите дату рождения"
                             type="date"
                             class="tab-content-input-profile tab-content-input-profile-birthdate"
                             tabindex="-1"
-                          />
+                          /> {% endcomment %}
+                          {{ form.birthdate }}
                         </div>
                         <div
                           class="tab-content-input-profile-row tab-content-input-profile-row-post-index tab-input"
                         >
-                          <input
+                          {% comment %} <input
                             placeholder="Укажите почтовый индекс"
                             type="number"
                             class="tab-content-input-profile tab-content-input-profile-post-index"
                             tabindex="-1"
-                          />
+                          /> {% endcomment %}
+                          {{ form.post_index }}
                         </div>
                         <div
                           class="tab-content-input-profile-row tab-content-input-profile-row-salary tab-input"
                         >
-                          <input
+                          {% comment %} <input
                             placeholder="Баланс счета клиента, ₽"
                             type="number"
                             class="tab-content-input-profile tab-content-input-profile-salary"
                             tabindex="-1"
-                          />
+                          /> {% endcomment %}
+                          {{ form.account_balance }}
                         </div>
                       </div>
                       <div class="input-wrapper">
                         <div
                           class="tab-content-input-profile-row tab-content-input-profile-row-sum tab-input"
                         >
-                          <input
+                          {% comment %} <input
                             placeholder="Сумма взносов клиента, ₽"
                             type="number"
                             class="tab-content-input-profile tab-content-input-profile-sum"
                             tabindex="-1"
-                          />
+                          /> {% endcomment %}
+                          {{ form.amount_of_conrib }}
                         </div>
                         <div
                           class="tab-content-input-profile-row tab-content-input-profile-row-sum-count tab-input"
                         >
-                          <input
+                          {% comment %} <input
                             placeholder="Число взносов клиента"
                             type="number"
                             class="tab-content-input-profile tab-content-input-profile-sum-count"
                             tabindex="-1"
-                          />
+                          /> {% endcomment %}
+                          {{ form.count_of_conrib }}
                         </div>
                         <div
                           class="tab-content-input-profile-row tab-content-input-profile-row-first-сontribution tab-input active"
                         >
-                          <input
+                          {% comment %} <input
                             placeholder="Дата первого взноса"
                             type="date"
                             class="tab-content-input-profile tab-content-input-profile-first-сontribution"
                             tabindex="-1"
-                          />
+                          /> {% endcomment %}
+                          {{ form.first_date }}
                         </div>
                       </div>
                       <div class="input-wrapper">
                         <div
                           class="tab-content-input-profile-row tab-content-input-profile-row-last-сontribution tab-input active"
                         >
-                          <input
+                          {% comment %} <input
                             placeholder="Дата последнего взноса"
                             type="date"
                             class="tab-content-input-profile tab-content-input-profile-last-сontribution"
                             tabindex="-1"
-                          />
+                          /> {% endcomment %}
+                          {{ form.last_date }}
                         </div>
                         <div
                           class="tab-content-input-profile-row tab-content-input-profile-row-sum-contribution tab-input"
                         >
-                          <input
+                          {% comment %} <input
                             placeholder="Сумма дохода начисленного на счет клиента, ₽"
                             type="number"
                             class="tab-content-input-profile tab-content-input-profile-sum-contribution"
                             tabindex="-1"
-                          />
+                          /> {% endcomment %}
+                          {{ form.amount_of_income }}
                         </div>
                         <div
                           class="tab-content-input-profile-row tab-content-input-profile-row-contribution-amount tab-input"
                         >
-                          <input
+                          {% comment %} <input
                             placeholder="Размер операций по счету клиента, ₽"
                             type="number"
                             class="tab-content-input-profile tab-content-input-profile-contribution-amount"
                             tabindex="-1"
-                          />
+                          /> {% endcomment %}
+                          {{ form.operation_size }}
                         </div>
                       </div>
                     </div>

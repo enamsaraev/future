@@ -355,8 +355,10 @@ const inputCityValidation = () => {
   });
 };
 // Кнопка отправки
-const profileFormSubmitButton = document.querySelector(".profile-form-submit");
-profileFormSubmitButton.addEventListener("click", function (e) {
+const pf = document.querySelector(".profile-form")
+// const profileFormSubmitButton = document.querySelector(".profile-form-submit");
+// profileFormSubmitButton.addEventListener("click", function (e) 
+pf.addEventListener("submit", (e) => {
   e.preventDefault();
   inputGenderValidation();
   inputSurnameValidation();
@@ -386,7 +388,6 @@ profileFormSubmitButton.addEventListener("click", function (e) {
     isSumContributionValid &&
     isContributionAmountValid
   ) {
-    alert("Форма отправлена");
     inputGender.forEach((gender) => (gender.checked = false));
     inputGenderLabel.forEach((label) => label.classList.remove("active"));
     inputSurname.value = "";
@@ -409,7 +410,7 @@ profileFormSubmitButton.addEventListener("click", function (e) {
     inputLastContributionWrapper.classList.remove("invalid");
     inputSumContribution.value = "";
     inputContributionAmount.value = "";
-    profileForm.submit();
+    // profileForm.submit();
   } else {
     alert("Заполните обязательные поля");
   }
