@@ -1,0 +1,437 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body {
+  display: block;
+  font-family: "Roboto";
+  background: rgb(206, 230, 254);
+  background: linear-gradient(
+    90deg,
+    rgba(206, 230, 254, 1) 0%,
+    rgba(108, 133, 174, 1) 35%,
+    rgba(218, 236, 255, 1) 100%
+  );
+  min-height: 100vh;
+}
+
+.wrapper {
+  /* display: flex;
+  flex-direction: column; */
+  padding: 10px;
+  overflow: hidden;
+}
+
+.main-section {
+}
+
+.tabs-logo-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.tabs-active-user-body {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-container {
+  max-width: 1170px;
+  margin: 0px auto 20px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.tabs-section {
+  font-size: 16px;
+  color: rgb(80, 80, 80);
+}
+
+.tabs-container {
+  max-width: 1170px;
+  margin: 0px auto;
+}
+
+.tabs-logo {
+  max-width: 100%;
+}
+
+.tabs-body {
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs-header {
+  display: flex;
+  gap: 5px;
+  font-size: 22px;
+  flex-wrap: wrap;
+}
+
+.tabs-tab {
+  flex: 1 1 auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+  transition: transform 0.3s ease 0s;
+}
+.tabs-tab.active {
+  background-color: #fea000;
+  color: #fff;
+  transform: translateY(-10px);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.tabs-content {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  min-height: 72px;
+  position: relative;
+  overflow: hidden;
+}
+
+.tab-content {
+  position: absolute;
+  top: 100%;
+  transform: translateY(100%);
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+.tab-content.active {
+  position: static;
+  transform: translateY(0px);
+  opacity: 1;
+  z-index: 1;
+  transition: all 0.4s;
+}
+
+.tabs-content-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.tab-content-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tab-content-input-profile-row {
+  display: flex;
+  flex: 1 1 100%;
+  position: relative;
+}
+.tab-content-input-profile-row-birthdate::after {
+  top: -100%;
+}
+.tab-content-input-profile-row-birthdate.active::after {
+  content: "Укажите дату рождения";
+  font-size: 15px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  background-color: #fff;
+  color: grey;
+}
+.tab-content-input-profile-row-birthdate.active.invalid::after {
+  color: red;
+}
+.tab-content-input-profile-birthdate.valid {
+  color: #007bfb;
+}
+.tab-content-input-profile-birthdate.invalid {
+  border: 2px solid red;
+}
+.tab-content-input-profile-body-gender {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.tab-content-input-profile-row-gender {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+.tab-content-input-profile-gender-label {
+  gap: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease 0s;
+}
+.tab-content-input-profile-gender-label::before {
+  transition: transform 0.3s ease 0s;
+}
+.label-mars::before {
+  content: "\f229";
+  font: var(--fa-font-solid);
+  font-size: 20px;
+  width: 20px;
+}
+.label-venus::before {
+  content: "\f221";
+  font: var(--fa-font-solid);
+  font-size: 20px;
+  width: 20px;
+}
+.label-trans::before {
+  content: "\f225";
+  font: var(--fa-font-solid);
+  font-size: 20px;
+  width: 20px;
+}
+.tab-content-input-profile-gender-label.active {
+  color: #007bfb;
+}
+.tab-content-input-profile-gender-label.invalid {
+  color: red;
+}
+.tab-content-input-profile-gender-label.active::before {
+  transform: scale(1.3);
+}
+
+.tab-content-input-profile {
+  font-family: "Roboto";
+  color: grey;
+  display: flex;
+  flex: 1 1 auto;
+  padding: 10px;
+  border: 2px solid #fea000;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease 0s;
+  font-size: 15px;
+}
+.tab-content-input-profile-gender {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.tab-content-input-profile:focus {
+  outline: none;
+  border: 2px solid #fff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.tab-content-input-profile-body-city {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.tab-content-input-profile-city-label {
+  gap: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease 0s;
+}
+.tab-content-input-profile-city-label.active {
+  color: #007bfb;
+}
+.tab-content-input-profile-city-label.invalid {
+  color: red;
+}
+
+.tab-content-input-profile:focus::placeholder {
+  transform: translateY(-50px);
+}
+
+.tab-content-input-profile-surname.valid {
+  color: #007bfb;
+}
+.tab-content-input-profile-surname.invalid {
+  border: 2px solid red;
+}
+.tab-content-input-profile-surname.invalid::placeholder {
+  color: red;
+}
+.tab-content-input-profile-name.valid {
+  color: #007bfb;
+}
+.tab-content-input-profile-name.invalid {
+  border: 2px solid red;
+}
+.tab-content-input-profile-name.invalid::placeholder {
+  color: red;
+}
+.tab-content-input-profile-salary.valid {
+  color: #007bfb;
+}
+.tab-content-input-profile-salary.invalid {
+  border: 2px solid red;
+}
+.tab-content-input-profile-salary.invalid::placeholder {
+  color: red;
+}
+.tab-content-input-profile-post-index.valid {
+  color: #007bfb;
+}
+.tab-content-input-profile-post-index.invalid {
+  border: 2px solid red;
+}
+.tab-content-input-profile-post-index.invalid::placeholder {
+  color: red;
+}
+.tab-content-input-profile-sum.valid {
+  color: #007bfb;
+}
+.tab-content-input-profile-sum.invalid {
+  border: 2px solid red;
+}
+.tab-content-input-profile-sum.invalid::placeholder {
+  color: red;
+}
+.tab-content-input-profile-sum-count.valid {
+  color: #007bfb;
+}
+.tab-content-input-profile-sum-count.invalid {
+  border: 2px solid red;
+}
+.tab-content-input-profile-sum-count.invalid::placeholder {
+  color: red;
+}
+.tab-content-input-profile-sum-contribution.valid {
+  color: #007bfb;
+}
+.tab-content-input-profile-sum-contribution.invalid {
+  border: 2px solid red;
+}
+.tab-content-input-profile-sum-contribution.invalid::placeholder {
+  color: red;
+}
+.tab-content-input-profile-contribution-amount.valid {
+  color: #007bfb;
+}
+.tab-content-input-profile-contribution-amount.invalid {
+  border: 2px solid red;
+}
+.tab-content-input-profile-contribution-amount.invalid::placeholder {
+  color: red;
+}
+.tab-content-input-profile-row-first-сontribution::after {
+  top: -100%;
+}
+.tab-content-input-profile-row-first-сontribution.active::after {
+  content: "Дата первого взноса";
+  font-size: 15px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  background-color: #fff;
+  color: grey;
+}
+.tab-content-input-profile-row-first-сontribution.active.invalid::after {
+  color: red;
+}
+.tab-content-input-profile-first-сontribution.valid {
+  color: #007bfb;
+}
+.tab-content-input-profile-first-сontribution.invalid {
+  border: 2px solid red;
+}
+
+.tab-content-input-profile-row-last-сontribution::after {
+  top: -100%;
+}
+.tab-content-input-profile-row-last-сontribution.active::after {
+  content: "Дата последнего взноса";
+  font-size: 15px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  background-color: #fff;
+  color: grey;
+}
+.tab-content-input-profile-row-last-сontribution.active.invalid::after {
+  color: red;
+}
+.tab-content-input-profile-last-сontribution.valid {
+  color: #007bfb;
+}
+.tab-content-input-profile-last-сontribution.invalid {
+  border: 2px solid red;
+}
+
+.tabs-content-form-submit-button {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 10px 15px;
+  font-weight: 700;
+  background-color: #fea000;
+  color: #fff;
+  border: 1px solid #fea000;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+
+.tabs-content-form-submit-button:hover {
+  background-color: #fff;
+  color: #fea000;
+  border: 1px solid #fff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 10px;
+}
+.input-wrapper-top {
+  column-gap: 50px;
+}
+
+@media (max-width: 680px) {
+  .tabs-logo-row {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .input-wrapper {
+    display: block;
+    gap: 0px;
+  }
+  .input-wrapper-top {
+    display: flex;
+    justify-content: center;
+    column-gap: 50px;
+    row-gap: 50px;
+  }
+  .tab-content-input-profile-row:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 425px) {
+  .input-wrapper-top {
+    display: block;
+  }
+  .tab-content-input-profile-body-gender {
+    margin-bottom: 10px;
+  }
+}

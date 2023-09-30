@@ -1,0 +1,268 @@
+{% load static %}
+{% csrf_token %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/169a0e69c0.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{% static 'img/apple-touch-icon.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{% static 'img/favicon-32x32.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{% static 'img/favicon-16x16.png' %}"
+    />
+    <link rel="manifest" href="{% static 'css/site.webmanifest' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>AIProsto</title>
+  </head>
+  <body class="active">
+    <div class="wrapper">
+      <section class="main-section">
+        <div class="tabs-logo-row">
+          <img src="{% static 'img/logo.png' %}" alt="logo" class="tabs-logo" />
+        </div>
+        <header class="header">
+          <div class="header-container"></div>
+        </header>
+        <main class="tabs-section">
+          <div class="tabs-container">
+            <div class="tabs-body">
+              <div class="tabs-header">
+                <div class="tabs-tab tab-1 active">Анкета</div>
+              </div>
+              <div class="tabs-content">
+                <div class="tab-content tab-content-1 active">
+                  <form method="post" class="tabs-content-form profile-form">
+                    <div class="tab-content-inputs">
+                      <div class="input-wrapper input-wrapper-top">
+                        <div
+                          class="tab-content-input-profile-body-gender tab-input"
+                        >
+                          Укажите пол
+                          <div class="tab-content-input-profile-row-gender">
+                            <label
+                              class="tab-content-input-profile-gender-label label-mars"
+                              for="gender-1"
+                              ><input
+                                id="gender-1"
+                                name="gender"
+                                type="radio"
+                                value="Мужчина"
+                                class="tab-content-input-profile-gender"
+                                tabindex="-1"
+                              />Мужчина</label
+                            >
+                          </div>
+                          <div class="tab-content-input-profile-row-gender">
+                            <label
+                              class="tab-content-input-profile-gender-label label-venus"
+                              for="gender-2"
+                              ><input
+                                id="gender-2"
+                                name="gender"
+                                type="radio"
+                                value="Женщина"
+                                class="tab-content-input-profile-gender"
+                                tabindex="-1"
+                              />Женщина</label
+                            >
+                          </div>
+                        </div>
+                        <div
+                          class="tab-content-input-profile-body-city tab-input"
+                        >
+                          Проживаете в городе
+                          <div class="tab-content-input-profile-row-city">
+                            <label
+                              class="tab-content-input-profile-city-label"
+                              for="city-1"
+                              ><input
+                                id="city-1"
+                                name="city"
+                                type="radio"
+                                value="Да"
+                                class="tab-content-input-profile-city"
+                                tabindex="-1"
+                              />Да</label
+                            >
+                          </div>
+                          <div class="tab-content-input-profile-row-city">
+                            <label
+                              class="tab-content-input-profile-city-label"
+                              for="city-2"
+                              ><input
+                                id="city-2"
+                                name="city"
+                                type="radio"
+                                value="Нет"
+                                class="tab-content-input-profile-city"
+                                tabindex="-1"
+                              />Нет</label
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="input-wrapper">
+                        <div
+                          class="tab-content-input-profile-row tab-content-input-profile-row-surname tab-input"
+                        >
+                          <input
+                            placeholder="Укажите фамилию"
+                            type="text"
+                            class="tab-content-input-profile tab-content-input-profile-surname"
+                            tabindex="-1"
+                          />
+                        </div>
+                        <div
+                          class="tab-content-input-profile-row tab-content-input-profile-row-name tab-input"
+                        >
+                          <input
+                            placeholder="Укажите имя"
+                            type="text"
+                            class="tab-content-input-profile tab-content-input-profile-name"
+                            tabindex="-1"
+                          />
+                        </div>
+                        <div
+                          class="tab-content-input-profile-row tab-content-input-profile-row-middlename tab-input"
+                        >
+                          <input
+                            placeholder="Укажите отчество (при наличии)"
+                            type="text"
+                            class="tab-content-input-profile tab-content-input-profile-middlename"
+                            tabindex="-1"
+                          />
+                        </div>
+                      </div>
+                      <div class="input-wrapper">
+                        <div
+                          class="tab-content-input-profile-row tab-content-input-profile-row-birthdate tab-input active"
+                        >
+                          <input
+                            placeholder="Укажите дату рождения"
+                            type="date"
+                            class="tab-content-input-profile tab-content-input-profile-birthdate"
+                            tabindex="-1"
+                          />
+                        </div>
+                        <div
+                          class="tab-content-input-profile-row tab-content-input-profile-row-post-index tab-input"
+                        >
+                          <input
+                            placeholder="Укажите почтовый индекс"
+                            type="number"
+                            class="tab-content-input-profile tab-content-input-profile-post-index"
+                            tabindex="-1"
+                          />
+                        </div>
+                        <div
+                          class="tab-content-input-profile-row tab-content-input-profile-row-salary tab-input"
+                        >
+                          <input
+                            placeholder="Баланс счета клиента, ₽"
+                            type="number"
+                            class="tab-content-input-profile tab-content-input-profile-salary"
+                            tabindex="-1"
+                          />
+                        </div>
+                      </div>
+                      <div class="input-wrapper">
+                        <div
+                          class="tab-content-input-profile-row tab-content-input-profile-row-sum tab-input"
+                        >
+                          <input
+                            placeholder="Сумма взносов клиента, ₽"
+                            type="number"
+                            class="tab-content-input-profile tab-content-input-profile-sum"
+                            tabindex="-1"
+                          />
+                        </div>
+                        <div
+                          class="tab-content-input-profile-row tab-content-input-profile-row-sum-count tab-input"
+                        >
+                          <input
+                            placeholder="Число взносов клиента"
+                            type="number"
+                            class="tab-content-input-profile tab-content-input-profile-sum-count"
+                            tabindex="-1"
+                          />
+                        </div>
+                        <div
+                          class="tab-content-input-profile-row tab-content-input-profile-row-first-сontribution tab-input active"
+                        >
+                          <input
+                            placeholder="Дата первого взноса"
+                            type="date"
+                            class="tab-content-input-profile tab-content-input-profile-first-сontribution"
+                            tabindex="-1"
+                          />
+                        </div>
+                      </div>
+                      <div class="input-wrapper">
+                        <div
+                          class="tab-content-input-profile-row tab-content-input-profile-row-last-сontribution tab-input active"
+                        >
+                          <input
+                            placeholder="Дата последнего взноса"
+                            type="date"
+                            class="tab-content-input-profile tab-content-input-profile-last-сontribution"
+                            tabindex="-1"
+                          />
+                        </div>
+                        <div
+                          class="tab-content-input-profile-row tab-content-input-profile-row-sum-contribution tab-input"
+                        >
+                          <input
+                            placeholder="Сумма дохода начисленного на счет клиента, ₽"
+                            type="number"
+                            class="tab-content-input-profile tab-content-input-profile-sum-contribution"
+                            tabindex="-1"
+                          />
+                        </div>
+                        <div
+                          class="tab-content-input-profile-row tab-content-input-profile-row-contribution-amount tab-input"
+                        >
+                          <input
+                            placeholder="Размер операций по счету клиента, ₽"
+                            type="number"
+                            class="tab-content-input-profile tab-content-input-profile-contribution-amount"
+                            tabindex="-1"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      type="submit"
+                      class="tabs-content-form-submit-button profile-form-submit"
+                      tabindex="-1"
+                    >
+                      Отправить
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </section>
+    </div>
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>
