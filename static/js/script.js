@@ -388,29 +388,29 @@ pf.addEventListener("submit", (e) => {
     isSumContributionValid &&
     isContributionAmountValid
   ) {
-    inputGender.forEach((gender) => (gender.checked = false));
-    inputGenderLabel.forEach((label) => label.classList.remove("active"));
-    inputSurname.value = "";
-    inputName.value = "";
-    middleName.value = "";
-    inputBirthday.value = "";
-    inputBirthdayWrapper.classList.add("active");
-    inputBirthdayWrapper.classList.remove("invalid");
-    inputIndex.value = "";
-    inputCity.forEach((city) => (city.checked = false));
-    inputCityLabel.forEach((label) => label.classList.remove("active"));
-    inputSalary.value = "";
-    inputSum.value = "";
-    inputSumCount.value = "";
-    inputFirstContribution.value = "";
-    inputFirstContributionWrapper.classList.add("active");
-    inputFirstContributionWrapper.classList.remove("invalid");
-    inputLastContribution.value = "";
-    inputLastContributionWrapper.classList.add("active");
-    inputLastContributionWrapper.classList.remove("invalid");
-    inputSumContribution.value = "";
-    inputContributionAmount.value = "";
-    // profileForm.submit();
+    // inputGender.forEach((gender) => (gender.checked = false));
+    // inputGenderLabel.forEach((label) => label.classList.remove("active"));
+    // inputSurname.value = "";
+    // inputName.value = "";
+    // middleName.value = "";
+    // inputBirthday.value = "";
+    // inputBirthdayWrapper.classList.add("active");
+    // inputBirthdayWrapper.classList.remove("invalid");
+    // inputIndex.value = "";
+    // inputCity.forEach((city) => (city.checked = false));
+    // inputCityLabel.forEach((label) => label.classList.remove("active"));
+    // inputSalary.value = "";
+    // inputSum.value = "";
+    // inputSumCount.value = "";
+    // inputFirstContribution.value = "";
+    // inputFirstContributionWrapper.classList.add("active");
+    // inputFirstContributionWrapper.classList.remove("invalid");
+    // inputLastContribution.value = "";
+    // inputLastContributionWrapper.classList.add("active");
+    // inputLastContributionWrapper.classList.remove("invalid");
+    // inputSumContribution.value = "";
+    // inputContributionAmount.value = "";
+    profileForm.submit();
   } else {
     alert("Заполните обязательные поля");
   }
